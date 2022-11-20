@@ -32,13 +32,9 @@ const onclick = () => {
             document.querySelector('.number').textContent = secretNumber;
             document.querySelector('body').style.backgroundColor = 'Green';
             document.querySelector('.number').style.width = '30rem';
-        } else if (guess > secretNumber) {
+        } else {
             decreaseScore();
-            setMessage('📈 too high');
-        }
-        else {
-            decreaseScore();
-            setMessage('📉 too low');
+            setMessage(guess > secretNumber ? '📈 too high' : '📉 too low');
         }
     } else {
         document.querySelector('.score').textContent = 0;
